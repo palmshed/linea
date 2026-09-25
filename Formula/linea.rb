@@ -1,13 +1,13 @@
 class Linea < Formula
   desc "Local-first AI assistant"
-  homepage "https://github.com/bniladridas/linea"
-  url "https://github.com/bniladridas/linea/archive/refs/tags/v0.3.27.tar.gz"
+  homepage "https://github.com/palmshed/linea"
+  url "https://github.com/palmshed/linea/archive/refs/tags/v0.3.27.tar.gz"
   sha256 "049e3e0460999101f9bc3ea2cc9bdcf3f271fb04ffe04c46078bd53e1d9ff90e"
   license "MIT"
-  head "https://github.com/bniladridas/linea.git", branch: "main"
+  head "https://github.com/palmshed/linea.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/bniladridas/linea/releases/download/v0.3.27"
+    root_url "https://github.com/palmshed/linea/releases/download/v0.3.27"
     sha256 arm64_sequoia: "98a3cdca3e8609c03d21a67f50e21e209db632e2cf969f1f9f1c5a4ae7a7ad98"
   end
 

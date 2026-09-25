@@ -210,7 +210,7 @@ const editBlocks = entries.reverse().map((entry) => {
             <h2 id="edit-${entry.shortHash}">${escapeHtml(entry.subject)}</h2>
             <p class="edit-meta">
               ${escapeHtml(entry.date)} ·
-              <a href="https://github.com/bniladridas/linea/commit/${entry.hash}">${entry.shortHash}</a>
+              <a href="https://github.com/palmshed/linea/commit/${entry.hash}">${entry.shortHash}</a>
             </p>
 ${fileBlocks}
           </section>`;

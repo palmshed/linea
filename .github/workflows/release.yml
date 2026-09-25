@@ -78,13 +78,13 @@ jobs:
       - name: Update Homebrew formula
         run: |
           version="${GITHUB_REF_NAME#v}"
-          curl -sL "https://github.com/bniladridas/linea/archive/refs/tags/${GITHUB_REF_NAME}.tar.gz" \
+          curl -sL "https://github.com/palmshed/linea/archive/refs/tags/${GITHUB_REF_NAME}.tar.gz" \
             -o /tmp/source.tar.gz
           source_sha=$(shasum -a 256 /tmp/source.tar.gz | awk '{print $1}')
           bottle_sha=$(shasum -a 256 "dist/linea-${version}.arm64_sequoia.bottle.tar.gz" | awk '{print $1}')
-          sed -i '' "s|url \".*\"|url \"https://github.com/bniladridas/linea/archive/refs/tags/${GITHUB_REF_NAME}.tar.gz\"|" Formula/linea.rb
+          sed -i '' "s|url \".*\"|url \"https://github.com/palmshed/linea/archive/refs/tags/${GITHUB_REF_NAME}.tar.gz\"|" Formula/linea.rb
           sed -i '' "s/sha256 \".*\"/sha256 \"${source_sha}\"/" Formula/linea.rb
-          sed -i '' "s|root_url \".*\"|root_url \"https://github.com/bniladridas/linea/releases/download/${GITHUB_REF_NAME}\"|" Formula/linea.rb
+          sed -i '' "s|root_url \".*\"|root_url \"https://github.com/palmshed/linea/releases/download/${GITHUB_REF_NAME}\"|" Formula/linea.rb
           sed -i '' "s/sha256 arm64_sequoia: \".*\"/sha256 arm64_sequoia: \"${bottle_sha}\"/" Formula/linea.rb
 
       - uses: actions/create-github-app-token@v3
@@ -106,7 +106,7 @@ jobs:
           git diff --cached --quiet && echo "No changes" && exit 0
           git checkout -b "$branch"
           git commit -m "chore: update formula and package for ${version}"
-          git push --force "https://x-access-token:${GH_TOKEN}@github.com/bniladridas/linea.git" "$branch"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/palmshed/linea.git" "$branch"
           gh pr create \
             --base main \
             --head "$branch" \

@@ -94,7 +94,7 @@ function reportUrl(version: string): string {
 
 **What happened:**
 `;
-  return `https://github.com/bniladridas/linea/issues/new?template=bug-report.md&body=${encodeURIComponent(body)}`;
+  return `https://github.com/palmshed/linea/issues/new?template=bug-report.md&body=${encodeURIComponent(body)}`;
 }
 
 type Conversation = {
@@ -4338,9 +4338,9 @@ function DashboardPage({
       </div>
       <div className="app-footer">
         <span>© 2026 Linea</span>
-        <a href="https://github.com/bniladridas/linea">GitHub</a>
-        <a href="https://github.com/bniladridas/linea/issues">Issues</a>
-        <a href="https://github.com/bniladridas/linea/releases">Releases</a>
+        <a href="https://github.com/palmshed/linea">GitHub</a>
+        <a href="https://github.com/palmshed/linea/issues">Issues</a>
+        <a href="https://github.com/palmshed/linea/releases">Releases</a>
       </div>
       {unrestrictedConfirm && (
         <ConfirmDialog

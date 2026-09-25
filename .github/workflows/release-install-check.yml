@@ -30,7 +30,7 @@ jobs:
 
       - name: Setup tap
         run: |
-          brew tap bniladridas/linea https://github.com/bniladridas/linea
+          brew tap bniladridas/linea https://github.com/palmshed/linea
           git -C "$(brew --prefix)/Library/Taps/bniladridas/homebrew-linea" pull --ff-only
 
       - name: Override formula for PR

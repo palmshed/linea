@@ -7,7 +7,7 @@ Config reference, checks, API endpoints, and install details.
 Homebrew:
 
 ```sh
-brew tap bniladridas/linea
+brew tap palmshed/linea
 brew install linea
 ```
 

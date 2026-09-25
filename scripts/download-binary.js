@@ -19,7 +19,7 @@ if (existsSync(targetFile)) {
 }
 
 const { version } = require("../package.json");
-const url = `https://github.com/bniladridas/linea/releases/download/v${version}/linea_v${version}_darwin_${arch}.tar.gz`;
+const url = `https://github.com/palmshed/linea/releases/download/v${version}/linea_v${version}_darwin_${arch}.tar.gz`;
 const tmpFile = join(targetDir, "linea.tar.gz");
 mkdirSync(targetDir, { recursive: true });
 console.log("Downloading linea " + version + " (darwin-" + arch + ")");

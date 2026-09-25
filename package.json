@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bniladridas/linea.git"
+    "url": "git+https://github.com/palmshed/linea.git"
   },
   "license": "MIT",
   "engines": {

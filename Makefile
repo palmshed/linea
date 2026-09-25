@@ -16,7 +16,7 @@ start: site-dates build
 stop:
 	./scripts/stop.sh
 
-BREW_LINEA_BIN = $$(brew --prefix bniladridas/linea/linea)/bin/linea
+BREW_LINEA_BIN = $$(brew --prefix palmshed/linea/linea)/bin/linea
 
 VERSION ?= $(shell git describe --tags --dirty --always 2>/dev/null || echo dev)
 
@@ -39,24 +39,24 @@ check: build
 	./bin/linea check
 
 install-check:
-	brew tap bniladridas/linea https://github.com/bniladridas/linea
+	brew tap palmshed/linea https://github.com/palmshed/linea
 	git -C "$$(brew --prefix)/Library/Taps/bniladridas/homebrew-linea" pull --ff-only
-	if brew list --formula bniladridas/linea/linea >/dev/null 2>&1; then \
-		brew upgrade bniladridas/linea/linea || test "$$(brew outdated --quiet bniladridas/linea/linea)" = ""; \
+	if brew list --formula palmshed/linea/linea >/dev/null 2>&1; then \
+		brew upgrade palmshed/linea/linea || test "$$(brew outdated --quiet palmshed/linea/linea)" = ""; \
 	else \
-		brew install bniladridas/linea/linea; \
+		brew install palmshed/linea/linea; \
 	fi
-	brew link --overwrite bniladridas/linea/linea
-	brew trust bniladridas/linea 2>/dev/null || true
-	HOMEBREW_NO_REQUIRE_TAP_TRUST=1 brew test bniladridas/linea/linea
+	brew link --overwrite palmshed/linea/linea
+	brew trust palmshed/linea 2>/dev/null || true
+	HOMEBREW_NO_REQUIRE_TAP_TRUST=1 brew test palmshed/linea/linea
 	$(BREW_LINEA_BIN) -version
 
 release-check:
 	git pull --ff-only
-	git -C "$$(brew --repo bniladridas/linea)" pull --ff-only
-	brew info bniladridas/linea/linea
-	brew upgrade bniladridas/linea/linea
-	brew link --overwrite bniladridas/linea/linea
+	git -C "$$(brew --repo palmshed/linea)" pull --ff-only
+	brew info palmshed/linea/linea
+	brew upgrade palmshed/linea/linea
+	brew link --overwrite palmshed/linea/linea
 	$(BREW_LINEA_BIN) -version
 	$(BREW_LINEA_BIN) migrate
 	$(BREW_LINEA_BIN) check

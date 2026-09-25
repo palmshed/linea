@@ -89,7 +89,7 @@ Full reference in [docs/reference.md](./docs/reference.md).
 
 | Platform | Method |
 | :--- | :--- |
-| macOS | `brew install linea` or [Releases](https://github.com/bniladridas/linea/releases) |
+| macOS | `brew install linea` or [Releases](https://github.com/palmshed/linea/releases) |
 | Android | [Build from source](./android/README.md) |
 | iOS | [Build from source](./ios/README.md) |
 
