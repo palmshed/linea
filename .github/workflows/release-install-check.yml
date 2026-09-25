@@ -30,22 +30,22 @@ jobs:
 
       - name: Setup tap
         run: |
-          brew tap bniladridas/linea https://github.com/palmshed/linea
-          git -C "$(brew --prefix)/Library/Taps/bniladridas/homebrew-linea" pull --ff-only
+          brew tap palmshed/linea https://github.com/palmshed/linea
+          git -C "$(brew --prefix)/Library/Taps/palmshed/homebrew-linea" pull --ff-only
 
       - name: Override formula for PR
         if: github.event_name == 'pull_request'
         run: |
-          cp Formula/linea.rb "$(brew --prefix)/Library/Taps/bniladridas/homebrew-linea/Formula/linea.rb"
+          cp Formula/linea.rb "$(brew --prefix)/Library/Taps/palmshed/homebrew-linea/Formula/linea.rb"
 
       - name: Install and test
         run: |
-          if brew list --formula bniladridas/linea/linea >/dev/null 2>&1; then \
-            brew upgrade bniladridas/linea/linea || test "$(brew outdated --quiet bniladridas/linea/linea)" = ""; \
+          if brew list --formula palmshed/linea/linea >/dev/null 2>&1; then \
+            brew upgrade palmshed/linea/linea || test "$(brew outdated --quiet palmshed/linea/linea)" = ""; \
           else \
-            brew install bniladridas/linea/linea; \
+            brew install palmshed/linea/linea; \
           fi
-          brew link --overwrite bniladridas/linea/linea
-          brew trust bniladridas/linea 2>/dev/null || true
-          HOMEBREW_NO_REQUIRE_TAP_TRUST=1 brew test bniladridas/linea/linea
-          $(brew --prefix bniladridas/linea/linea)/bin/linea -version
+          brew link --overwrite palmshed/linea/linea
+          brew trust palmshed/linea 2>/dev/null || true
+          HOMEBREW_NO_REQUIRE_TAP_TRUST=1 brew test palmshed/linea/linea
+          $(brew --prefix palmshed/linea/linea)/bin/linea -version

@@ -14,7 +14,7 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     env:
-      RENOVATE_REPOSITORIES: bniladridas/linea
+      RENOVATE_REPOSITORIES: palmshed/linea
 
     steps:
       - uses: actions/create-github-app-token@v3
