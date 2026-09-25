@@ -40,7 +40,7 @@ check: build
 
 install-check:
 	brew tap palmshed/linea https://github.com/palmshed/linea
-	git -C "$$(brew --prefix)/Library/Taps/bniladridas/homebrew-linea" pull --ff-only
+	git -C "$$(brew --prefix)/Library/Taps/palmshed/homebrew-linea" pull --ff-only
 	if brew list --formula palmshed/linea/linea >/dev/null 2>&1; then \
 		brew upgrade palmshed/linea/linea || test "$$(brew outdated --quiet palmshed/linea/linea)" = ""; \
 	else \
